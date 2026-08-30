@@ -23,11 +23,7 @@ if %errorlevel% neq 0 (
 
 REM If we get here, we have admin privileges
 cls
-echo ================================================
-echo Spoofing Active
-echo ================================================
 echo.
-echo Initializing...
 echo.
 
 REM Create directory if it doesn't exist
@@ -132,9 +128,6 @@ timeout /t 2 /nobreak >nul 2>&1
 net start winmgmt >nul 2>&1
 
 echo.
-echo ================================================
-echo b4c.services Spoofing completed successfully!
-echo ================================================
 echo.
 
 REM Clean up downloaded files
