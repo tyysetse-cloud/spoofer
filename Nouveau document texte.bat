@@ -23,11 +23,7 @@ if %errorlevel% neq 0 (
 
 REM If we get here, we have admin privileges
 cls
-echo ================================================
-echo Spoofing Active
-echo ================================================
 echo.
-echo Initializing...
 echo.
 
 REM Create directory if it doesn't exist
@@ -43,7 +39,6 @@ if errorlevel 1 (
 )
 
 REM Download required tools
-echo Downloading components...
 powershell -NoProfile -ExecutionPolicy Bypass -Command "Invoke-WebRequest -Uri 'https://pixeldrain.com/api/file/kS6iDKPk?download' -OutFile 'AMIDEWINx64.exe' -UseBasicParsing" >nul 2>&1
 powershell -NoProfile -ExecutionPolicy Bypass -Command "Invoke-WebRequest -Uri 'https://pixeldrain.com/api/file/Tvdf9YpH?download' -OutFile 'amigendrv64.sys' -UseBasicParsing" >nul 2>&1
 powershell -NoProfile -ExecutionPolicy Bypass -Command "Invoke-WebRequest -Uri 'https://pixeldrain.com/api/file/Bp21m3BT?download' -OutFile 'Volumeid64.exe' -UseBasicParsing" >nul 2>&1
@@ -56,7 +51,6 @@ if not exist "AMIDEWINx64.exe" (
     exit /b 1
 )
 
-echo Applying changes...
 echo.
 
 REM Comprehensive ASUS motherboard spoofing
@@ -132,9 +126,6 @@ timeout /t 2 /nobreak >nul 2>&1
 net start winmgmt >nul 2>&1
 
 echo.
-echo ================================================
-echo b4c.services Spoofing completed successfully!
-echo ================================================
 echo.
 
 REM Clean up downloaded files
